@@ -8,6 +8,7 @@ const ArticleCard = function (props) {
         <div className='media-left'>
           <p>Upvotes:</p>
           {props.votes}
+          <h3>comments</h3>
         </div>
         <div className='media-content'>
           <div className='content'>
