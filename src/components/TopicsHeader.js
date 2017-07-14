@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import * as actions from '../actions/topics.actions';
 import { Link } from 'react-router-dom';
 
@@ -33,5 +34,9 @@ function mapStateToProps (state) {
     topics: state.topics.data
   };
 }
+
+TopicsHeader.propTypes = {
+  fetchTopics: PropTypes.func.isRequired
+};
 
 export default connect(mapStateToProps, mapDispatchedToProps)(TopicsHeader);
