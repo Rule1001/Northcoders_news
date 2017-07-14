@@ -8,8 +8,7 @@ export function fetchArticles (topic) {
     dispatch(fetchArticlesRequest());
 
     let route;
-    topic === undefined ? route = 'articles' : route = `topics/${topic}/articles`;
-      
+    route = topic === undefined ? 'articles' : `topics/${topic}/articles`;   
     axios.get(`${ROOT}/${route}`)
       .then(res => {
         dispatch(fetchArticlesSuccess(res.data.articles));
@@ -21,20 +20,20 @@ export function fetchArticles (topic) {
 }
 
 
-export function fetchArticlesRequest() {
+export function fetchArticlesRequest () {
   return {
     type: types.FETCH_ARTICLES_REQUEST
   };
 }
 
-export function fetchArticlesSuccess(articles) {
+export function fetchArticlesSuccess (articles) {
   return {
     type: types.FETCH_ARTICLES_SUCCESS,
     payload: articles
   };
 }
 
-export function fetchArticlesError(error) {
+export function fetchArticlesError (error) {
   return {
     type: types.FETCH_ARTICLES_ERROR,
     payload: error

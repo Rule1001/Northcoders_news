@@ -2,7 +2,7 @@ import * as types from './types';
 import axios from 'axios';
 import { ROOT } from '../../config';
 
-export function fetchComments() {
+export function fetchComments () {
   return function (dispatch) {
     dispatch(fetchCommentsRequest());
     axios.get(`${ROOT}/articles`)
@@ -11,24 +11,24 @@ export function fetchComments() {
       })
       .catch(err => {
         dispatch(fetchCommentsError(err));
-      })
+      });
 
   };
 }
-export function fetchCommentsRequest() {
+export function fetchCommentsRequest () {
   return {
     type: types.FETCH_COMMENTS_REQUEST
   };
 }
 
-export function fetchCommentsSucess(articles) {
+export function fetchCommentsSucess (articles) {
   return {
     type: types.FETCH_COMMENTS_SUCCESS,
     payload: articles
   };
 }
 
-export function fetchCommentsError(error) {
+export function fetchCommentsError (error) {
   return {
     type: types.FETCH_COMMENTS_ERROR,
     payload: error

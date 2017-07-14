@@ -1,3 +1,4 @@
+
 import * as types from '../actions/types';
 
 const initialState = {
@@ -7,6 +8,7 @@ const initialState = {
 };
 
 function topicsReducer (prevState = initialState, topic) {
+
   if (!topic) return prevState;
 
   if (topic.type === types.FETCH_TOPICS_REQUEST) {

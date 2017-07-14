@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import TopicsHeader from './TopicsHeader';
-import ArticlesList from './ArticleList';
 import '../css/AppLayout.css';
 
 class App extends React.Component {
-  render() {
+  render () {
     return (
 
       <div className="appLayout">
@@ -13,7 +12,7 @@ class App extends React.Component {
           <TopicsHeader />
         </div>
         <div>
-          <nav className="nav" colour="#lavender">
+          <nav className="nav">
             <div className="nav-left">
               <a className="nav-item">
                 <img src="https://northcoders.com/images/logos/learn_to_code_manchester_original_second.png" alt="Bulma logo" /></a>

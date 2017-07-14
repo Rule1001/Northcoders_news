@@ -5,5 +5,4 @@ import topicsReducer from './topicsReducer';
 export default combineReducers({
   articles: articlesReducer,
   topics: topicsReducer
-
 });
