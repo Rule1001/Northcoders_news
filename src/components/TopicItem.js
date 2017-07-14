@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import '../css/TopicsBar.css';
 
 const TopicItem = function (props) {
+
   return (
 
       <div className="topicsItem">

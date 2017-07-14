@@ -1,14 +1,8 @@
 import React from 'react';
-import ArticleCard from './ArticleCard';
 import { connect } from 'react-redux';
 import * as actions from '../actions/topics.actions';
 import TopicItem from './TopicItem';
-import Spinner from 'react-spinkit'
-
-
-const topics = [{ topic: 'football' },
-{ topic: 'cooking' },
-{ topic: 'coding' }];
+import { Link } from 'react-router-dom';
 
 class TopicsHeader extends React.Component {
   componentDidMount() {
@@ -17,12 +11,12 @@ class TopicsHeader extends React.Component {
   render() {
     return (
       <div className="columns">
-        <div className="column is-12">
-        <div id='TopicsHeader'>
-          {this.props.topics.map(topic => <TopicItem topic={topic.title} key={topic._id} />)}
+        <div className="column is-12" background-color="rgb(240,225,165)">
+          <div id='TopicsHeader'>
+            {this.props.topics.map(topic => <Link to={`/topics/${topic.slug}/articles`}>{topic.slug}</Link>)}
+          </div>
         </div>
-        </div>
-        </div>
+      </div>
     );
   }
 }

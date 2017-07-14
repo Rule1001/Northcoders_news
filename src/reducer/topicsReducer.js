@@ -6,7 +6,7 @@ const initialState = {
   error: null
 };
 
-function topicsReducer(prevState = initialState, topic) {
+function topicsReducer (prevState = initialState, topic) {
   if (!topic) return prevState;
 
   if (topic.type === types.FETCH_TOPICS_REQUEST) {

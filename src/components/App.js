@@ -5,7 +5,7 @@ import ArticlesList from './ArticleList';
 import '../css/AppLayout.css';
 
 class App extends React.Component {
-  render () {
+  render() {
     return (
 
       <div className="appLayout">
@@ -13,7 +13,7 @@ class App extends React.Component {
           <TopicsHeader />
         </div>
         <div>
-          <nav className="nav">
+          <nav className="nav" colour="#lavender">
             <div className="nav-left">
               <a className="nav-item">
                 <img src="https://northcoders.com/images/logos/learn_to_code_manchester_original_second.png" alt="Bulma logo" /></a>
@@ -24,8 +24,9 @@ class App extends React.Component {
           </nav>
         </div>
 
+
         <div>
-          <ArticlesList />
+          {this.props.children}
         </div>
       </div>
 

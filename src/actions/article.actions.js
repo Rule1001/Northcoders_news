@@ -2,10 +2,15 @@ import * as types from './types';
 import axios from 'axios';
 import { ROOT } from '../../config';
 
-export function fetchArticles () {
+export function fetchArticles (topic) {
+
   return function (dispatch) {
     dispatch(fetchArticlesRequest());
-    axios.get(`${ROOT}/articles`)
+
+    let route;
+    topic === undefined ? route = 'articles' : route = `topics/${topic}/articles`;
+      
+    axios.get(`${ROOT}/${route}`)
       .then(res => {
         dispatch(fetchArticlesSuccess(res.data.articles));
       })
@@ -15,22 +20,24 @@ export function fetchArticles () {
   };
 }
 
-export function fetchArticlesRequest () {
+
+export function fetchArticlesRequest() {
   return {
     type: types.FETCH_ARTICLES_REQUEST
   };
 }
 
-export function fetchArticlesSuccess (articles) {
+export function fetchArticlesSuccess(articles) {
   return {
     type: types.FETCH_ARTICLES_SUCCESS,
     payload: articles
   };
 }
 
-export function fetchArticlesError (error) {
+export function fetchArticlesError(error) {
   return {
     type: types.FETCH_ARTICLES_ERROR,
     payload: error
   };
 }
+

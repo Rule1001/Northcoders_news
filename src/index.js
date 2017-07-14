@@ -9,9 +9,11 @@ import './css/bulma.css';
 import './css/font-awesome.css';
 import logger from 'redux-logger';
 
+
 import App from './components/App';
 import ArticleList from './components/ArticleList';
 import reducer from './reducer/index';
+import Homepage from './pages/Homepage';
 
 const store = createStore(reducer, applyMiddleware(thunk, logger));
 
@@ -21,7 +23,8 @@ ReactDOM.render(<Provider store={store}>
   <Router history={history}>
     <App>
       <Switch>
-        <Route exact path='/' component={ArticleList} />
+        <Route path='/' component={Homepage} />
+        <Route path='/articles/:topic_id' component={ArticleList} />
       </Switch>
     </App>
   </Router>
