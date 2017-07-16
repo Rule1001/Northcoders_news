@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../css/TopicsBar.css';
+// import '../css/TopicsBar.css';
 
 const TopicItem = function (props) {
 

@@ -12,8 +12,9 @@ import logger from 'redux-logger';
 
 import App from './components/App';
 import reducer from './reducer/index';
-import Homepage from './pages/Homepage';
-import Topics from './pages/Topics';
+// import Homepage from './pages/Homepage';
+// import Topics from './pages/Topics';
+import ArticleList from './components/ArticleList';
 
 const store = createStore(reducer, applyMiddleware(thunk, logger));
 
@@ -23,8 +24,8 @@ ReactDOM.render(<Provider store={store}>
   <Router history={history}>
     <App>
       <Switch>
-        <Route exact path='/' component={Homepage} />
-        <Route path='/topics/:topic_id/articles' component={Topics} />
+        <Route exact path='/' component={ArticleList} />
+        {/* <Route path='/topics/:topic_id/articles' component={Topics} /> */}
       </Switch>
     </App>
   </Router>

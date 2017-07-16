@@ -2,30 +2,22 @@ import React from 'react';
 import ArticleCard from './ArticleCard';
 import PropTypes from 'prop-types';
 
+const articles = [{ title: 'I\'m an article', votes: 4 },
+{ title: 'I\'m another article', votes: 5 },
+{ title: 'I\'m an article too', votes: 2 }];
 
 class ArticleList extends React.Component {
-
   render () {
     return (
-      <div className="columns">
-        <div className="column columns is-multiline">
-          <div id='ArticleList'>
-            {this.props.articles.map(article => <ArticleCard title={article.title} votes={article.votes} key={article.title} />)}
-            <div className="column is-3">
-              <div className="box">
-                <p>search box</p>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div id="ArticleList">
+        {articles.map(article => <ArticleCard title={article.title} votes={article.votes} key={article.title} />)}
       </div>
     );
   }
 }
 
-ArticleList.propTypes = {
-  articles: PropTypes.array.isRequired
-};
+// ArticleList.propTypes = {
+//   articles: PropTypes.array.isRequired
+// };
 
 export default ArticleList;
-

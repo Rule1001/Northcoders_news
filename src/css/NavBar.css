@@ -1,0 +1,30 @@
+.navbar {
+  padding:0;
+  margin:0 0 20px 0;
+  box-shadow: 1px 1px 3px #aaa;
+  height: 50px;
+  background-color: rgb(206,227,248);
+  display:flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.navbar-brand {
+  height:50px;
+}
+
+.navbar-item {
+  padding-top:3px;
+  text-align:center;
+  height:25px;
+  width:50px;
+  background-color:#FFF;
+  margin: 0 5px;
+   border-top-left-radius: 5px;
+  border-top-right-radius: 5px; 
+}
+
+.navbar-item:hover {
+  background-color: #aaa;
+}
