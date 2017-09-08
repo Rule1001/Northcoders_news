@@ -1,12 +1,25 @@
 import * as types from '../actions/types';
+//import initialState from './initialState';
+
+// const initialState = {
+//   data: [],
+//   loading: false,
+//   error: null
+// };
 
 const initialState = {
-  data: [],
-  loading: false,
-  error: null
-};
+    data: [],
+    topicArticles: [],
+    article: {},
+    comments: [],
+    users: {},
+    topics: [],
+    selectedTopic: null,
+    loading: false,
+    error: null,
+  };
 
-function actionsReducer (prevState = initialState, action) {
+function articlesReducer (prevState = initialState, action) {
   if (!action) return prevState;
 
   if (action.type === types.FETCH_ARTICLES_REQUEST) {
@@ -34,4 +47,4 @@ function actionsReducer (prevState = initialState, action) {
   return prevState;
 }
 
-export default actionsReducer;
+export default articlesReducer;
